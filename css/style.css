@@ -75,6 +75,24 @@ nav ul li a:hover {
   color: #00c4cc;
 }
 
+/* Mobile Nav Adjustments */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    padding: 15px; /* Slightly less padding for compactness */
+    text-align: center;
+  }
+  .logo {
+    margin-bottom: 15px; /* Space between logo and links */
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 10px 0; /* Vertical spacing, no left margin */
+  }
+}
+
 .hero {
   text-align: center;
   padding: 80px 20px 20px;
