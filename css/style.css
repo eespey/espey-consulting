@@ -45,6 +45,7 @@ body.about .background-wrapper::before {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
   background: #111;
   z-index: 2;
@@ -54,6 +55,75 @@ nav {
   font-size: 24px;
   font-weight: 700;
   color: #00c4cc;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-links li a:hover {
+  color: #00c4cc;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-icon {
+  display: inline-block;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #111;
+    padding: 10px 0;
+    z-index: 1;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  nav {
+    flex-direction: row; /* Keep logo and hamburger on same row */
+    padding: 15px; /* Slightly less padding */
+    align-items: center;
+  }
+  .logo {
+    margin-bottom: 0; /* No extra space */
+  }
+  .hamburger.active .hamburger-icon {
+    content: "✕"; /* X when open - applied directly to span */
+  }
 }
 
 nav ul {
@@ -73,24 +143,6 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #00c4cc;
-}
-
-/* Mobile Nav Adjustments */
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    padding: 15px; /* Slightly less padding for compactness */
-    text-align: center;
-  }
-  .logo {
-    margin-bottom: 15px; /* Space between logo and links */
-  }
-  nav ul {
-    flex-direction: column;
-  }
-  nav ul li {
-    margin: 10px 0; /* Vertical spacing, no left margin */
-  }
 }
 
 .hero {
